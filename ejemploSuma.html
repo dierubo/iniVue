@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <script src="https://unpkg.com/vue"></script>
+    </head>
+    <body>
+        <div id="app">
+            <button v-on:click="primero++">Incrementando el primero</button>
+            <button v-on:click="segundo++">Incrementando el segundo</button>
+            <button v-on:click="tercero++">Incrementando el tercero</button>
+            <button v-on:click="cuarto++">Incrementando el cuarto</button>
+            <button v-on:click="quinto++">Incrementando el quinto</button>
+
+            <p>Primero: {{ primero }}</p>
+            <p>Segundo: {{ segundo }}</p>
+            <p>Tercero: {{ tercero }}</p>
+            <p>Cuarto: {{ cuarto }}</p>
+            <p>Quinto: {{ quinto }}</p>
+            <p>Total: {{ totale }}</p>
+        </div>
+        <script src="js/suma.js"></script>
+    </body>
+</html>

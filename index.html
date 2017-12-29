@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>App en Vue</title>
+        <script src="https://unpkg.com/vue"></script>
+    </head>
+    <body>
+        <div class="vue">
+            <input type="text" v-model="nombre" name="" value=""> <br/>
+            <div>Bienvenido {{ nombre }}</div>
+            <hr>
+            <span>{{ mensaje }}</span>
+            <div>{{ mostrarMensaje() }}</div>
+            <!-- con v-bind se genera un enlace de datos a la propiedad de HTML que queremos, que en este caso es src desde una de las propiedades del modelo que en este caso será imagen -->
+            <!-- <img v-bind:src="imagen" width="50" height="50" alt="" /> -->
+            <!-- También funciona con la versión corta de v-bind que es los dos puntos. Ej: :src="imagen" -->
+            <img :src="imagen" width="50" height="50" alt="" />
+            <!-- Se activará la función propia de Vue  beforeUpdate y updated porque detectará que algo se cambiará en el DOM -->
+            <button v-on:click="mensaje = 'Nuevo mensaje al hacer click en el boton'">Cambiar mensaje</button>
+            <button v-on:click="destruir = 'Nuevo mensaje al hacer click en el boton'">Destruir instancia</button>
+        </div>
+        <script src="js/vue.js"></script>
+    </body>
+</html>
