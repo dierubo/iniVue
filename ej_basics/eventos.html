@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Eventos en Vue</title>
+        <script src="https://unpkg.com/vue"></script>
+    </head>
+    <body>
+        <div class="vue">
+            <button v-on:click="sumarUno">Sumar uno</button>
+            <button v-on:click="restarUno">Restar uno</button>
+            <hr />
+            {{ contador }}
+            <hr />
+            <button v-on:click="alerta('Esto es una alerta')">Mostrar alerta</button>
+            <hr />
+            <!-- Modificador de eventos ".once" sirve para ejecutar solamente el evento una vez -->
+            <!-- La forma corta de escribir los eventos ON es sustituyendo la parte de v-on por @ -->
+            <div style="width: 200px; height: 200px; border: 1px solid;" @mousemove="mostrarUbicacion" @click.once="totalSuma(3)">
+                <!-- El evento mousemove del padre sigue funcionando en el hijo. En cambio, si se quiere que no funcione se usará el modificador de evento ".stop" -->
+                <div style="width: 80px; height: 80px; border: 1px solid red;" v-on:mousemove.stop></div>
+            </div>
+            x: {{ x }}, y: {{ y }}, total: {{ total }}
+            <!-- Solamente saltará el evento cuando se presiona la tecla de retroceso. Con esto se puede ver que se puede poner eventos a ciertas teclas. Ej: .space, .alt.67 (alt+C) -->
+            <input type="text" v-on:keyup.delete="totalSuma(1)">
+        </div>
+        <script src="js/events.js"></script>
+    </body>
+</html>

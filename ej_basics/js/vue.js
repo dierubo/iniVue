@@ -5,6 +5,8 @@ var app = new Vue({
         mensaje: 'Conociendo nuevos JS',
         imagen: 'https://vuejs.org/images/logo.png',
         nombre: 'James',
+        texto: 'Esto es el Vue',
+        texto_html: "<strong>Pruebas html</strong>",
     },
     beforeCreate: function() {
         console.log("Usando la función beforeCreate");

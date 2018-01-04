@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>App en Vue</title>
+        <script src="https://unpkg.com/vue"></script>
+    </head>
+    <body>
+        <div class="vue">
+            <div v-if="mostrar">Este es el primer div</div>
+            <div v-else>Este es el segundo div</div>
+            <!-- Con la etiqueta template y la condición, nos permite visualizar su contenido (en caso de que sea true) pero si se inspecciona se verá que el contenido no está dentro de nada
+                y eso será transparente para el usuario. No se mostrará en el DOM. Si es false directamente no se mostrará nada -->
+            <template v-if="wat">
+                <h3>Titulo</h3>
+                <p>parrafo</p>
+            </template>
+
+            <div v-if="parrafo == 1">Parrafo 1</div>
+            <div v-else-if="parrafo == 2">Parrafo 2</div>
+            <div v-else-if="parrafo == 3">Parrafo 3</div>
+            <div v-else>Parrafo no es 1 ni 2 ni 3</div>
+
+            <!-- La directiva v-show lo que hace es esconder la etiqueta mediante CSS, en cambio v-if si la quita del DOM -->
+            <div v-show="mostrar">mostrar con show</div>
+        </div>
+        <script src="js/condicionales_if_else.js"></script>
+    </body>
+</html>

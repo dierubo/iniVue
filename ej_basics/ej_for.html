@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>App en Vue</title>
+        <script src="https://unpkg.com/vue"></script>
+    </head>
+    <body>
+        <div class="vue">
+            <ul>
+                <template v-for="(pais, indice) in paises">
+                    <li>{{ indice + 1 }} {{ pais }}</li>
+                    <hr />
+                </template>
+            </ul>
+            <ul>
+                <li v-for="data in datosPaises">{{ data.nombre }}</li>
+            </ul>
+
+            <ul>
+                <li v-for="(valor, key) in empleado">{{ key}} --> {{ valor }}</li>
+            </ul>
+        </div>
+        <script src="js/loop_for.js"></script>
+    </body>
+</html>

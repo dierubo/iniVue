@@ -1,0 +1,68 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+ul {
+    list-style: none;
+}
+
+.app-tareas {
+    width: 800px;
+    margin: 0 auto;
+    background-color: #A4A4A4;
+}
+
+.content-app {
+    width: 700px;
+    margin: 0 auto;
+}
+
+.titulo-app {
+    text-align: center;
+    color: #333333;
+    font-size: 25px;
+    margin: 0 0 30px 0;
+    padding: 15px 0 0 0;
+}
+
+.input-app {
+    width: 600px;
+    height: 30px;
+}
+
+.btn-app {
+    width: 80px;
+    height: 30px;
+    background-color: blue;
+    color: #FFFFFF;
+    border: none;
+}
+
+.listado-app {
+
+}
+
+.item-app {
+    width: 550px;
+    display: inline-block;
+}
+
+.btn-ok {
+    width: 50px;
+    border: none;
+}
+
+.btn-cancel {
+    width: 50px;
+    border: none;
+}
+
+.terminada {
+    color: grey;
+    text-decoration: line-through;
+}

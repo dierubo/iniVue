@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>App en Vue</title>
+        <title>App en Vue Condicionales</title>
         <script src="https://unpkg.com/vue"></script>
     </head>
     <body>
@@ -10,6 +10,9 @@
             <input type="text" v-model="nombre" name="" value=""> <br/>
             <div>Bienvenido {{ nombre }}</div>
             <hr>
+            <div v-text="texto"></div>
+            <!-- La directiva v-html recoge el valor de la propiedad y transforma lo que haya de etiquetas html -->
+            <div v-html="texto_html"></div>
             <span>{{ mensaje }}</span>
             <div>{{ mostrarMensaje() }}</div>
             <!-- con v-bind se genera un enlace de datos a la propiedad de HTML que queremos, que en este caso es src desde una de las propiedades del modelo que en este caso será imagen -->
