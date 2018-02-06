@@ -9,10 +9,6 @@
                 </div>
 
                 <div slot="elementos">
-                    <div class="email-container">
-                        <label for="">Email</label>
-                        <input type="email" name="email" value="Email" />
-                    </div>
                     <div class="pass-container">
                         <label for="">Password</label>
                         <input type="password" name="password" value="Password" />

@@ -11,11 +11,11 @@
                 <div slot="elementos">
                     <div class="email-container">
                         <label for="">Email</label>
-                        <input type="email" name="email" value="Email" />
+                        <input type="email" name="email" placeholder="Email" />
                     </div>
                     <div class="pass-container">
                         <label for="">Password</label>
-                        <input type="password" name="password" value="Password" />
+                        <input type="password" name="password" placeholder="Password" />
                     </div>
                 </div>
 

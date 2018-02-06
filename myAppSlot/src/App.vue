@@ -4,7 +4,7 @@
             <mostrar-formulario>
                 <!-- Esto sustituirá a la etiqueta slot que hay en MostrarFormulario -->
 
-                <div slot="titulo">
+                <!-- <div slot="titulo">
                     <h3>Cambiar contraseña</h3>
                 </div>
 
@@ -21,7 +21,17 @@
 
                 <div slot="boton">
                     <button type="submit">Enviar</button>
-                </div>
+                </div> -->
+
+                <!-- Otra forma -->
+                <!-- Lo que se hace aquí es cargar o llamar a unos componentes, que anteriormente se han importado, a través de una propiedad definida en DATA-->
+                <!-- iniciarSesion o cambiarClave hacen referencia al alias de los componentes que se han definido en el export -->
+                <button @click="componenteSeleccionado = 'iniciarSesion'">IniciarSesion</button>
+                <button @click="componenteSeleccionado = 'cambiarClave'">Cambiar contraseña</button>
+                <!-- Para guardar la información cuando se pasa de un componente a otro se hace mediante la etiqueta keep-alive -->
+                <keep-alive>
+                    <component v-bind:is="componenteSeleccionado"></component>
+                </keep-alive>
             </mostrar-formulario>
         </div>
     </div>
@@ -35,10 +45,14 @@ import IniciarSesion from './IniciarSesion.vue';
 
 export default {
     components: {
-        MostrarFormulario,
+        mostrarFormulario: MostrarFormulario,
+        cambiarClave: CambiarClave,
+        iniciarSesion: IniciarSesion,
     },
-    data () {
-
+    data() {
+        return {
+            componenteSeleccionado: 'iniciarSesion'
+        }
     }
 }
 
