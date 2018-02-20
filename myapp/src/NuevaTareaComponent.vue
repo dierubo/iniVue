@@ -46,6 +46,18 @@
 
                     // Aquí la función ya está definida dentro del 'bus de datos' en el main.js y es común a todos
                     bus.actualizarContador(this.tareas.length);
+
+                    // Hacemos una llamada HTTP con el servicio 'Vue-resources' que hemos importado en main.js. 
+                    // El primer argumento es la dirección web que no da firebase de nuestra base de datos y la parte de 'tareas.json' es un nombre
+                    // cualquiera que hemos dado en este fichero. Se podría haber llamado de cualquier forma, pero tiene que acabar con .json. El segundo
+                    // argumento es la variable que vamos a pasar para que la guarde en la base de datos.
+                    // Se hace la llamada a la dirección declarada en el 'main.js' . La barra diagonal la pone sola
+                    this.$http.post('tareas.json', {
+                        texto: texto,
+                        terminada: false
+                    })
+                    // Como la llamada HTTP es una promesa(asíncrono) , queremos que cuando termine haga lo que sea.
+                    .then(respuesta => console.log(respuesta));
                 }
 
                 this.nuevaTarea = "";

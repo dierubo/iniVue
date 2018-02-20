@@ -1,21 +1,12 @@
 <template>
-  <div id="app">
-    <img src="./assets/logo.png">
-    <h1>{{ msg }}</h1>
-    <h2>Essential Links</h2>
-    <ul>
-      <li><a href="https://vuejs.org" target="_blank">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank">Forum</a></li>
-      <li><a href="https://chat.vuejs.org" target="_blank">Community Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank">Twitter</a></li>
-    </ul>
-    <h2>Ecosystem</h2>
-    <ul>
-      <li><a href="http://router.vuejs.org/" target="_blank">vue-router</a></li>
-      <li><a href="http://vuex.vuejs.org/" target="_blank">vuex</a></li>
-      <li><a href="http://vue-loader.vuejs.org/" target="_blank">vue-loader</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a></li>
-    </ul>
+  <div class="container">
+    <div class="jumbotron">
+      <!-- De esta forma creamos un filtro. A partir de la barra en adelante son filtros y esos filtros van a afectar a la variable que está antes de la barra
+      que en este caso es mensaje. El filtro suspensivos está declarado como filtro global en main.js 
+      El filtro suspensivo recibirá lo que le venga por la izda, que en este caso será el mensaje, pero en mayúsculas. -->
+      <span>{{ mensaje | mayusculas | suspensivos}}</span><br/>
+      <span>{{ temperatura | aFahrenheit }}</span>
+    </div>
   </div>
 </template>
 
@@ -24,37 +15,24 @@ export default {
   name: 'app',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      mensaje: 'Welcome to Your Vue.js App',
+      temperatura: 30,
+    }
+  },
+  filters: {
+    // Vue sabe que a la hora de crear los propios filtros recibes la variable que está a la izda de la barra. En este caso, es mensaje, pero se puede poner otro
+    // nombre cualquier al argumento recibido en la función, ya que el valor de la variable mensaje nunca va a cambiar. Se podía haber llamado msg o arg o lo que sea
+    // El valor que tendrá será el de la variable mensaje que está en data()
+    mayusculas(msg) {
+      return msg.toUpperCase();
+    },
+    aFahrenheit(celsius) {
+      return (9/5 * celsius) + 32 + 'F';
     }
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
 
-h1, h2 {
-  font-weight: normal;
-}
-
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-
-a {
-  color: #42b983;
-}
 </style>

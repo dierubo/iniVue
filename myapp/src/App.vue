@@ -51,6 +51,28 @@
             actualizarContador() {
                 this.numTareas++;
             }
+        },
+        created() {
+            // La llamada a la dirección de la base de datos se hace a través de una variable global declarada como root. La barra diagonal, 'slash' la pone sola
+            this.$http.get('tareas.json')
+                        .then(respuesta => {
+                            // Se usa el método '.json' para pasar la respuesta a un objeto de tipo JSON
+                            //console.log(respuesta.json());
+                            return respuesta.json();
+                        })
+                        // Aquí se recibe la respuesta anterior que es 'respuesta.json' pero a la variable pasada por argumneto se le pasa el nombre que queramos
+                        .then(respuestaJson => {
+                            console.log(respuestaJson);
+
+                            for (let id in respuestaJson) {
+                                let tarea = {
+                                    id: id,
+                                    texto: respuestaJson[id].texto,
+                                    terminada: respuestaJson[id].terminada,
+                                }
+                                this.tareas.push(tarea);
+                            }
+                        })
         }
     }
 </script>
