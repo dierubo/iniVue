@@ -8,7 +8,8 @@ export const rutas = [
         component: InicioComponent
     },
     {
-        path: '/usuarios',
+        // Los dos puntos de la URL significa que es dinámico
+        path: '/usuarios/:id',
         component: UsuariosComponent
     }
 ]
