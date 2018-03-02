@@ -2,11 +2,20 @@
     <div>
         <p>Lista de Usuarios</p>
         <ul class="list-gropup">
-            <span>ID: {{ id }}</span>
-            <li v-for="usuario in usuarios" class="list-group-item">
+            <!-- <span>ID: {{ id }}</span> -->
+            <!-- Con la propiedad :to (v-bind:to) se ofrece información dinámica a la subruta que hemos nombrado con 'name' y le pasamos el/los
+            parámetros que necesita, que en este caso será el id del usuario. Qué ese id se encuentra en nuestro objeto usuario sacado del 
+            bucle FOR -->
+            <router-link tag="li" :to="{name: 'infoUsuario', params: {id: usuario.id}}" v-for="usuario in usuarios" class="list-group-item">
                 {{ usuario.name }}
-            </li>
+            </router-link>
+            <!-- Versión antigua --> 
+            <!-- <li v-for="usuario in usuarios" class="list-group-item">
+                {{ usuario.name }}
+            </li> -->
         </ul>
+        <!-- Este router view es para las subrutas de usuario cuando llega por la URL '/usuarios/5'. La subruta está declarado en 'rutas.js' -->
+        <router-view></router-view>
     </div>
 </template>
 

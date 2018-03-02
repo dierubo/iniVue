@@ -8,7 +8,7 @@
                 <!-- Con la propiedad exact hacemos que el elemento activo sea tal cual en la URL. Es decir, quue sin eso ahora mismo pondría los dos
                 botones a activo porque los dos tienen la '/'. En cambio, si se pone 'exact' tendrá que ser exactamente lo que dice  -->
                 <router-link tag="li" active-class="active" exact to="/"><a>Inicio</a></router-link>
-                <router-link tag="li" active-class="active" exact to="/usuarios/3"><a>Usuarios</a></router-link>
+                <router-link tag="li" active-class="active" exact to="/usuarios"><a>Usuarios</a></router-link>
                 <!-- OTRA FORMA -->
                 <!-- <li><router-link to="/">Inicio</router-link></li>
                 <li><router-link to="/usuarios">Usuarios</router-link></li> -->
